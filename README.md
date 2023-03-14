@@ -1,5 +1,18 @@
 # Appium + Java + Android - 2023
 
+This project uses the following technologies:
+* Java 17
+* Appium
+* Serenity BDD
+* Cucumber
+* Gradle
+* Android 13
+* Android SDK
+* IntelliJ IDEA
+* macOS Ventura
+
+And it's written with the design pattern Screenplay that helps to maintain the SOLID principles.
+
 This project is based on https://github.com/Jacobvu84/serenity-screenplay-appium/
 
 ## Running the project
@@ -54,7 +67,7 @@ sh gherkin_check.sh
 
 ### Error: Appium cannot locate the device
 
-The device can has a different name than the one you are using in the code. You can check the name of the device by running the following command:
+The device can have a different name than the one you are using in the code. You can check the name of the device by running the following command:
 ```bash
 adb devices
 ```
