@@ -11,7 +11,7 @@ import net.serenitybdd.screenplay.waits.WaitUntilTargetIsReady;
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.NoSuchElementException;
 
-public class ShowMenuPanel implements Task {
+public class ShowMenuPanelTask implements Task {
 
     @Step("{0} shows the menu panel  ")
     public <T extends Actor> void performAs(T actor) {
@@ -27,7 +27,7 @@ public class ShowMenuPanel implements Task {
         }
     }
 
-    public static ShowMenuPanel openMenuPanel() {
-        return instrumented(ShowMenuPanel.class);
+    public static ShowMenuPanelTask openMenuPanel() {
+        return instrumented( ShowMenuPanelTask.class);
     }
 }

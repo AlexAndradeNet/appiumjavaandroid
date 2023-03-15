@@ -9,12 +9,12 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 
-public class AccountProfile implements Task {
+public class AccountProfileTask implements Task {
 
     @Step("{0} shows the menu panel")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-            ShowMenuPanel.openMenuPanel(),
+            ShowMenuPanelTask.openMenuPanel(),
             WaitUntil.the(LeftMenuBarPage.MANAGE_ACCOUNTS_PANEL, isCurrentlyEnabled())
                 .forNoMoreThan(30)
                 .seconds(),

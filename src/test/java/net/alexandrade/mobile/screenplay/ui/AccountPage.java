@@ -30,7 +30,7 @@ public class AccountPage {
     public static final Target NO_ACCOUNTS_PANEL =
             Target.the("add icon and message").located((By.id("net.metaquotes.metatrader5:id/no_accounts")));
 
-    public static final Target getAlertMsg(String label) {
+    public static Target getAlertMsg(String label) {
         return Target.the("message")
                 .located(By.xpath(String.format("//android.widget.TextView[contains(@text,'%s')]", label)));
     }

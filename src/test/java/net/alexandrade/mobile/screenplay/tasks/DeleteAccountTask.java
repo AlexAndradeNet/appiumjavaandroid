@@ -11,11 +11,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 
-/**
- * @author datdc@gearinc.com
- *
- */
-public class DeleteAccount implements Task {
+public class DeleteAccountTask implements Task {
 
     @Step("{0} delete the slected account")
     public <T extends Actor> void performAs(T actor) {
@@ -35,7 +31,7 @@ public class DeleteAccount implements Task {
                 Click.on(AccountPage.YES_BUTTON));
     }
 
-    public static DeleteAccount currently() {
-        return instrumented(DeleteAccount.class);
+    public static DeleteAccountTask currently() {
+        return instrumented( DeleteAccountTask.class);
     }
 }

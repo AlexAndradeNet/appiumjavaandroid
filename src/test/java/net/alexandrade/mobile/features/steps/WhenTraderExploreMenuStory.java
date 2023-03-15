@@ -19,18 +19,22 @@ public class WhenTraderExploreMenuStory {
     @Then("see the numbers of items is {int}")
     public void seeTheNumbersOfItemsIs(int numberOfElements) {
         theActorInTheSpotlight()
-                .should(
-                        seeThat(MenuBarWebUI.numberOfItems(), is(numberOfElements)),
-                        seeThat(
-                                MenuBarWebUI.displayedWithStrictOrder(),
-                                contains(
-                                        "Trade",
-                                        "News",
-                                        "Mailbox",
-                                        "Journal",
-                                        "Settings",
-                                        "Economic calendar",
-                                        "Traders Community",
-                                        "About")));
+            .should(
+                seeThat(MenuBarWebUI.numberOfItems(), is(numberOfElements)),
+                seeThat(
+                    MenuBarWebUI.displayedWithStrictOrder(),
+                    contains(
+                            "Trade",
+                            "News",
+                            "Mailbox",
+                            "Journal",
+                            "Settings",
+                            "Economic calendar",
+                            "Traders Community",
+                            "About"
+                    )
+                )
+            )
+        ;
     }
 }

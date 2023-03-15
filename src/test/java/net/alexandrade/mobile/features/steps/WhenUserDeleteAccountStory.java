@@ -6,18 +6,18 @@ import static org.hamcrest.Matchers.is;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.alexandrade.mobile.screenplay.questions.SelectedAccount;
-import net.alexandrade.mobile.screenplay.tasks.DeleteAccount;
+import net.alexandrade.mobile.screenplay.questions.SelectedAccountQuestion;
+import net.alexandrade.mobile.screenplay.tasks.DeleteAccountTask;
 
 public class WhenUserDeleteAccountStory {
 
     @When("wants to delete its account")
     public void wantsToDeleteItsAccount() {
-        theActorInTheSpotlight().attemptsTo(DeleteAccount.currently());
+        theActorInTheSpotlight().attemptsTo( DeleteAccountTask.currently());
     }
 
     @Then("see the accounts disappears")
     public void seeTheNumbersOfItemsIs() {
-        theActorInTheSpotlight().should(seeThat(SelectedAccount.disappear(), is(true)));
+        theActorInTheSpotlight().should(seeThat( SelectedAccountQuestion.disappear(), is(true)));
     }
 }

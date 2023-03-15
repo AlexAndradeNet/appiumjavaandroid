@@ -14,7 +14,7 @@ public class DashboardPage {
 
     public static final String MENU_LABEL = "net.metaquotes.metatrader5:id/drawer_name";
 
-    public static final Target getMenuByLabel(String label) {
+    public static Target getMenuByLabel(String label) {
         return Target.the("menu item: " + label)
                 .located(By.xpath(String.format("//android.widget.TextView[@text='%s']", label)));
     }

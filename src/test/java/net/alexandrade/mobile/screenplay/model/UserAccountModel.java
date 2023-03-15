@@ -1,6 +1,8 @@
 package net.alexandrade.mobile.screenplay.model;
 
-public class UserAccount {
+import java.util.Objects;
+
+public class UserAccountModel {
     private final String loginId;
     private final String email;
 
@@ -12,12 +14,12 @@ public class UserAccount {
         return email;
     }
 
-    public UserAccount() {
+    public UserAccountModel () {
         this.loginId = "";
         this.email = "";
     }
 
-    public UserAccount(String title, String email) {
+    public UserAccountModel (String title, String email) {
         this.loginId = title;
         this.email = email;
     }
@@ -28,14 +30,14 @@ public class UserAccount {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
 
-        UserAccount userAccount = (UserAccount) o;
+        UserAccountModel userAccountModel = (UserAccountModel) obj;
 
-        if (loginId != null ? !loginId.equals(userAccount.loginId) : userAccount.loginId != null) return false;
-        return email != null ? email.equals(userAccount.email) : userAccount.email == null;
+        if ( !Objects.equals( loginId, userAccountModel.loginId ) ) return false;
+        return Objects.equals( email, userAccountModel.email );
     }
 
     @Override
@@ -61,8 +63,8 @@ public class UserAccount {
             return this;
         }
 
-        public UserAccount build() {
-            return new UserAccount(loginId, email);
+        public UserAccountModel build() {
+            return new UserAccountModel(loginId, email);
         }
     }
 }

@@ -10,18 +10,17 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 
-public class MenuBoard implements Interaction {
+public class MenuBoardAction implements Interaction {
     @Override
     @Step("{0} show the menu dashboard")
     public <T extends Actor> void performAs(T actor) {
-
         WaitUntil.the(MAIN_NAVIGATE_BUTTON, isCurrentlyEnabled())
-                .forNoMoreThan(60)
-                .seconds();
+            .forNoMoreThan(60)
+            .seconds();
         Click.on(MAIN_NAVIGATE_BUTTON);
     }
 
-    public static MenuBoard show() {
-        return instrumented(MenuBoard.class);
+    public static MenuBoardAction show() {
+        return instrumented( MenuBoardAction.class);
     }
 }
