@@ -9,6 +9,9 @@ buildscript {
 
     dependencies {
         classpath "net.serenity-bdd:serenity-gradle-plugin:3.6.7"
+        classpath( "com.diffplug.spotless:spotless-plugin-gradle:6.17.0" ) {
+            exclude group: 'com.google.guava', module: 'guava-jdk17'
+        }
     }
 }
 
@@ -20,6 +23,7 @@ plugins {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
+apply plugin: 'com.diffplug.spotless'
 apply plugin: 'net.serenity-bdd.serenity-gradle-plugin'
 apply plugin: 'org.sonarqube'
 apply from: "$rootDir/gradle/libraries.gradle"
@@ -89,6 +93,29 @@ serenity {
     requirementsDir = "src/test/resources/features"
 }
 
+spotless {
+    java {
+        target fileTree('.') {
+            include '**/*.java'
+            exclude '**/build/**', '**/build-*/**'
+        }
+        toggleOffOn()
+        palantirJavaFormat()
+        removeUnusedImports()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+}
+
 //gradle.startParameter.continueOnFailure = true
 
 test.finalizedBy(aggregate)
+
+/*
+gradle.projectsEvaluated {
+    if (project.automatedBuild) {
+        preBuild.dependsOn(spotlessCheck)
+    } else {
+        preBuild.dependsOn(spotlessApply)
+    }
+}*/

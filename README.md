@@ -9,7 +9,6 @@ This project uses the following technologies:
 * Android 13
 * Android SDK
 * IntelliJ IDEA
-* macOS Ventura
 
 And it's written with the design pattern Screenplay that helps to maintain the SOLID principles.
 
@@ -54,6 +53,17 @@ start target/site/serenity/index.html
 ```
 
 ## Linting
+
+### Java
+
+The Java files are linted using the `checkstyle` tool. The configuration file is located in the `checkstyle.xml` file.
+Run the following command to lint the Java files:
+```bash
+# To check the code
+./gradlew clean build spotlessCheck
+# To fix the code
+./gradlew clean build spotlessApply
+```
 
 ### Linting Gherkin files
 
