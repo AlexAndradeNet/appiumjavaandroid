@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.converters.converters.StringConverter;
 
-public class SelectedAccount implements Question<Boolean> {
+public class SelectedAccountQuestion implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
@@ -14,6 +14,6 @@ public class SelectedAccount implements Question<Boolean> {
     }
 
     public static Question<Boolean> disappear() {
-        return new SelectedAccount();
+        return new SelectedAccountQuestion();
     }
 }

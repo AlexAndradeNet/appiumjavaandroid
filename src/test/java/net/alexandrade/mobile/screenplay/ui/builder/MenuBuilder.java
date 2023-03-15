@@ -2,7 +2,6 @@ package net.alexandrade.mobile.screenplay.ui.builder;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import net.alexandrade.mobile.screenplay.ui.DashboardPage;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;

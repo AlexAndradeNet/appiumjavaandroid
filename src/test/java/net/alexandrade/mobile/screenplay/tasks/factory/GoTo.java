@@ -1,17 +1,14 @@
 package net.alexandrade.mobile.screenplay.tasks.factory;
 
-import net.alexandrade.mobile.screenplay.tasks.AccountProfile;
-import net.alexandrade.mobile.screenplay.tasks.DeleteAccount;
+import net.alexandrade.mobile.screenplay.tasks.AccountProfileTask;
+import net.alexandrade.mobile.screenplay.tasks.DeleteAccountTask;
 import net.serenitybdd.screenplay.Task;
 
 public class GoTo {
-
     public static Task accountProfile() {
-        return new AccountProfile();
+        return new AccountProfileTask();
     }
-
     public static Task guestProfile() {
-        return new DeleteAccount();
+        return new DeleteAccountTask();
     }
-
 }

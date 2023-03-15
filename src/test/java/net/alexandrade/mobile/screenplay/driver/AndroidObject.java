@@ -2,7 +2,6 @@ package net.alexandrade.mobile.screenplay.driver;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.TouchAction;
-
 import io.appium.java_client.android.AndroidDriver;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
@@ -16,9 +15,12 @@ public class AndroidObject {
         androidDriver(actor).hideKeyboard();
     }
 
-
     public void SwipeToElement(Actor actor, String label) {
-        androidDriver(actor).findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("+ "new UiSelector().text(\""+label+"\"));")).click();
+        androidDriver(actor)
+            .findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("
+                + "new UiSelector().text(\"" + label + "\"));"))
+            .click()
+        ;
     }
 
     public AndroidDriver getAndroidDriver(Actor actor) {
@@ -28,7 +30,6 @@ public class AndroidObject {
     @SuppressWarnings("unchecked")
     private static AndroidDriver androidDriver(Actor actor) {
         return (AndroidDriver) ((WebDriverFacade) getDriver(actor)).getProxiedDriver();
-
     }
 
     private static WebDriverFacade getDriver(Actor actor) {
@@ -37,12 +38,9 @@ public class AndroidObject {
 
     public TouchAction withAction(Actor actor) {
         return new TouchAction(androidDriver(actor));
-
     }
 
-    public void SwitchtoFrame(Actor actor, int id) {
+    public void SwitchToFrame(Actor actor, int id) {
         androidDriver(actor).switchTo().frame(id);
-
     }
-
 }

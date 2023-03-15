@@ -4,7 +4,7 @@ import net.alexandrade.mobile.screenplay.ui.DashboardPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
-public class NumberOfMenuInDashboard implements Question<Integer> {
+public class NumberOfMenuInDashboardQuestion implements Question<Integer> {
 
     @Override
     public Integer answeredBy(Actor actor) {
