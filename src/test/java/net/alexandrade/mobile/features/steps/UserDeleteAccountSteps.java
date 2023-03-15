@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 import net.alexandrade.mobile.screenplay.questions.SelectedAccountQuestion;
 import net.alexandrade.mobile.screenplay.tasks.DeleteAccountTask;
 
-public class WhenUserDeleteAccountStory {
+public class UserDeleteAccountSteps {
 
     @When("wants to delete its account")
     public void wantsToDeleteItsAccount() {

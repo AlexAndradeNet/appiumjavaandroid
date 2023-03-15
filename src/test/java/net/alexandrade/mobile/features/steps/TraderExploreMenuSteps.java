@@ -7,13 +7,14 @@ import static org.hamcrest.Matchers.is;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.alexandrade.mobile.screenplay.interactions.MenuBoardAction;
 import net.alexandrade.mobile.screenplay.questions.factory.MenuBarWebUI;
-import net.alexandrade.mobile.screenplay.tasks.factory.Navigate;
+import net.alexandrade.mobile.screenplay.tasks.ShowMenuPanelTask;
 
-public class WhenTraderExploreMenuStory {
+public class TraderExploreMenuSteps {
     @When("navigates to the menu panel")
     public void navigatesToTheMenuPanel() {
-        theActorInTheSpotlight().attemptsTo(Navigate.menuPanel());
+        theActorInTheSpotlight().attemptsTo( ShowMenuPanelTask.openMenuPanel() );
     }
 
     @Then("see the numbers of items is {int}")

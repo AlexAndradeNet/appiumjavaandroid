@@ -20,7 +20,7 @@ import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.webdriver.WebDriverFacade;
 import org.openqa.selenium.WebDriver;
 
-public class Hook {
+public class Hooks {
     @Managed(driver = "Appium")
     public WebDriver hisMobileDevice;
 

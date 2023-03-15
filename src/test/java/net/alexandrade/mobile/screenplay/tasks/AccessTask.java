@@ -11,22 +11,19 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 
 public class AccessTask implements Task {
-
     String label = "";
-
     public AccessTask (String label) {
         this.label = label;
     }
-
     @Step("{0} navigates to #label ")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 WaitUntil.the(DashboardPage.getMenuByLabel(label), isCurrentlyEnabled())
                         .forNoMoreThan(80)
                         .seconds(),
-                Click.on(DashboardPage.getMenuByLabel(label)));
+                Click.on(DashboardPage.getMenuByLabel(label))
+        );
     }
-
     public static AccessTask menuWithLabel(String label) {
         return instrumented( AccessTask.class, label);
     }

@@ -2,6 +2,7 @@ package net.alexandrade.mobile.screenplay.tasks;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isCurrentlyEnabled;
 
+import net.alexandrade.mobile.screenplay.interactions.MenuBoardAction;
 import net.alexandrade.mobile.screenplay.ui.LeftMenuBarPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
