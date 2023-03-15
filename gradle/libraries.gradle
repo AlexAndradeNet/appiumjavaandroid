@@ -35,8 +35,8 @@ ext {
                         ],
                         junit   : [
                                 junit  : "junit:junit:${junitVersion}",
-                                vintage: "org.junit.vintage:junit-vintage-engine:${JunitJupiterVersion}",
-                                platform: "org.junit.platform:junit-platform-launcher:1.9.2",
+                                jupiter: "org.junit.jupiter:junit-jupiter-engine:${JunitJupiterVersion}",
+                                vintage: "org.junit.vintage:junit-vintage-engine:${JunitJupiterVersion}"
                         ]
                 ]
         ]

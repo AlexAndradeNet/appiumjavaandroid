@@ -61,18 +61,21 @@ dependencies {
             libs.test.serenity.screenplayWebdriver,
             libs.test.serenity.cucumber6,
             libs.test.junit.junit,
-            libs.test.junit.platform
+            libs.test.junit.jupiter
 
     testRuntimeOnly libs.test.junit.vintage
 }
 
 test {
     useJUnitPlatform()
-}
 
-test {
     testLogging.showStandardStreams = true
     systemProperties System.getProperties()
+
+    systemProperty 'java.util.logging.config.file', file('src/test/resources/logging.properties')
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
 
 /* tasks.withType(Test).configureEach {
