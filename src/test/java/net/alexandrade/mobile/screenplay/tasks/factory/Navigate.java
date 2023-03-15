@@ -13,5 +13,4 @@ public class Navigate {
     public static Task menuWithLabel(String label) {
         return new Access(label);
     }
-
 }

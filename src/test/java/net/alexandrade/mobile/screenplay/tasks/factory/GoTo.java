@@ -13,5 +13,4 @@ public class GoTo {
     public static Task guestProfile() {
         return new DeleteAccount();
     }
-
 }

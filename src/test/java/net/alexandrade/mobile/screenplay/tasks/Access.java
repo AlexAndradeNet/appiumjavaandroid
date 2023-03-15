@@ -21,15 +21,13 @@ public class Access implements Task {
     @Step("{0} navigates to #label ")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(DashboardPage.getMenuByLabel(label), isCurrentlyEnabled()).forNoMoreThan(80).seconds(),
-                Click.on(DashboardPage.getMenuByLabel(label))
-
-        );
+                WaitUntil.the(DashboardPage.getMenuByLabel(label), isCurrentlyEnabled())
+                        .forNoMoreThan(80)
+                        .seconds(),
+                Click.on(DashboardPage.getMenuByLabel(label)));
     }
 
     public static Access menuWithLabel(String label) {
         return instrumented(Access.class, label);
     }
-
-
 }

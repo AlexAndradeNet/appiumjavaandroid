@@ -20,5 +20,4 @@ public class WhenUserDeleteAccountStory {
     public void seeTheNumbersOfItemsIs() {
         theActorInTheSpotlight().should(seeThat(SelectedAccount.disappear(), is(true)));
     }
-
 }

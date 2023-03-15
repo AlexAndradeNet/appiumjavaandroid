@@ -29,15 +29,12 @@ public class UserAccount {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null || getClass() != o.getClass())
-            return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
         UserAccount userAccount = (UserAccount) o;
 
-        if (loginId != null ? !loginId.equals(userAccount.loginId) : userAccount.loginId != null)
-            return false;
+        if (loginId != null ? !loginId.equals(userAccount.loginId) : userAccount.loginId != null) return false;
         return email != null ? email.equals(userAccount.email) : userAccount.email == null;
     }
 
@@ -52,8 +49,7 @@ public class UserAccount {
         private String loginId = "";
         private String email = "";
 
-        public UserAccountBuilder() {
-        }
+        public UserAccountBuilder() {}
 
         public UserAccountBuilder called(String loginId) {
             this.loginId = loginId;

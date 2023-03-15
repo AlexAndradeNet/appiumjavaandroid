@@ -15,10 +15,9 @@ public class AccountProfile implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 ShowMenuPanel.openMenuPanel(),
-                WaitUntil.the(LeftMenuBarPage.MANAGE_ACCOUNTS_PANEL, isCurrentlyEnabled()).forNoMoreThan(30).seconds(),
-                Click.on(LeftMenuBarPage.MANAGE_ACCOUNTS_PANEL)
-
-        );
+                WaitUntil.the(LeftMenuBarPage.MANAGE_ACCOUNTS_PANEL, isCurrentlyEnabled())
+                        .forNoMoreThan(30)
+                        .seconds(),
+                Click.on(LeftMenuBarPage.MANAGE_ACCOUNTS_PANEL));
     }
-
 }

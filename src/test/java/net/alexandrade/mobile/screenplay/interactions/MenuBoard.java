@@ -15,9 +15,10 @@ public class MenuBoard implements Interaction {
     @Step("{0} show the menu dashboard")
     public <T extends Actor> void performAs(T actor) {
 
-        WaitUntil.the(MAIN_NAVIGATE_BUTTON, isCurrentlyEnabled()).forNoMoreThan(60).seconds();
+        WaitUntil.the(MAIN_NAVIGATE_BUTTON, isCurrentlyEnabled())
+                .forNoMoreThan(60)
+                .seconds();
         Click.on(MAIN_NAVIGATE_BUTTON);
-
     }
 
     public static MenuBoard show() {
