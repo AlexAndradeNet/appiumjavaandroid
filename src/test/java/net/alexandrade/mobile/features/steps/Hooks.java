@@ -1,6 +1,4 @@
-/**
- *
- */
+/** */
 package net.alexandrade.mobile.features.steps;
 
 import static net.alexandrade.mobile.screenplay.ui.HomePage.acceptButton;

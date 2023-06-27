@@ -9,7 +9,7 @@ buildscript {
 
     dependencies {
         classpath "net.serenity-bdd:serenity-gradle-plugin:3.6.7"
-        classpath( "com.diffplug.spotless:spotless-plugin-gradle:6.17.0" ) {
+        classpath( "com.diffplug.spotless:spotless-plugin-gradle:6.19.0" ) {
             exclude group: 'com.google.guava', module: 'guava-jdk17'
         }
     }
@@ -94,16 +94,30 @@ serenity {
 }
 
 spotless {
+    encoding 'UTF-8'
     java {
         target fileTree('.') {
             include '**/*.java'
             exclude '**/build/**', '**/build-*/**'
         }
+        googleJavaFormat().aosp().reflowLongStrings()
+        formatAnnotations()
         toggleOffOn()
         palantirJavaFormat()
         removeUnusedImports()
         trimTrailingWhitespace()
         endWithNewline()
+    }
+    gherkin {
+        target 'src/**/*.feature' // you have to set the target manually
+        gherkinUtils() // has its own section below
+    }
+    freshmark {
+        target '*.md' // you have to set the target manually
+        propertiesFile('gradle.properties')		// loads all the properties in the given file
+        properties {
+            it.put('key', 'value')				// specify other properties manually
+        }
     }
 }
 
@@ -111,11 +125,6 @@ spotless {
 
 test.finalizedBy(aggregate)
 
-/*
-gradle.projectsEvaluated {
-    if (project.automatedBuild) {
-        preBuild.dependsOn(spotlessCheck)
-    } else {
-        preBuild.dependsOn(spotlessApply)
-    }
-}*/
+tasks.named('build') {
+    dependsOn spotlessApply
+}
