@@ -8,6 +8,7 @@ public class GoTo {
     public static Task accountProfile() {
         return new AccountProfileTask();
     }
+
     public static Task guestProfile() {
         return new DeleteAccountTask();
     }

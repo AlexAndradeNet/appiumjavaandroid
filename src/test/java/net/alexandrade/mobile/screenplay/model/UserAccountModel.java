@@ -14,12 +14,12 @@ public class UserAccountModel {
         return email;
     }
 
-    public UserAccountModel () {
+    public UserAccountModel() {
         this.loginId = "";
         this.email = "";
     }
 
-    public UserAccountModel (String title, String email) {
+    public UserAccountModel(String title, String email) {
         this.loginId = title;
         this.email = email;
     }
@@ -36,8 +36,8 @@ public class UserAccountModel {
 
         UserAccountModel userAccountModel = (UserAccountModel) obj;
 
-        if ( !Objects.equals( loginId, userAccountModel.loginId ) ) return false;
-        return Objects.equals( email, userAccountModel.email );
+        if (!Objects.equals(loginId, userAccountModel.loginId)) return false;
+        return Objects.equals(email, userAccountModel.email);
     }
 
     @Override

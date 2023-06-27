@@ -32,6 +32,6 @@ public class DeleteAccountTask implements Task {
     }
 
     public static DeleteAccountTask currently() {
-        return instrumented( DeleteAccountTask.class);
+        return instrumented(DeleteAccountTask.class);
     }
 }

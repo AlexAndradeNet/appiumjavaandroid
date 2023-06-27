@@ -17,10 +17,11 @@ public class AndroidObject {
 
     public void SwipeToElement(Actor actor, String label) {
         androidDriver(actor)
-            .findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("
-                + "new UiSelector().text(\"" + label + "\"));"))
-            .click()
-        ;
+                .findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("
+                        + "new UiSelector().text(\""
+                        + label
+                        + "\"));"))
+                .click();
     }
 
     public AndroidDriver getAndroidDriver(Actor actor) {

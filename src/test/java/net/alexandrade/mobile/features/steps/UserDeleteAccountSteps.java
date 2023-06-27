@@ -13,11 +13,11 @@ public class UserDeleteAccountSteps {
 
     @When("wants to delete its account")
     public void wantsToDeleteItsAccount() {
-        theActorInTheSpotlight().attemptsTo( DeleteAccountTask.currently());
+        theActorInTheSpotlight().attemptsTo(DeleteAccountTask.currently());
     }
 
     @Then("see the accounts disappears")
     public void seeTheNumbersOfItemsIs() {
-        theActorInTheSpotlight().should(seeThat( SelectedAccountQuestion.disappear(), is(true)));
+        theActorInTheSpotlight().should(seeThat(SelectedAccountQuestion.disappear(), is(true)));
     }
 }

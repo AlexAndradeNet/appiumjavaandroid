@@ -18,19 +18,16 @@ public class MenuBoardAction implements Interaction {
     public <T extends Actor> void performAs(T actor) {
         try {
             actor.attemptsTo(
-                new WaitUntilTargetIsReady( DashboardPage.MAIN_NAVIGATE_BUTTON, isCurrentlyEnabled())
-                  .forNoMoreThan(60)
-                  .seconds(),
-                Click.on( MAIN_NAVIGATE_BUTTON )
-            );
-        } catch ( NoSuchElementException e ) {
-            actor.attemptsTo(
-                Click.on( MAIN_NAVIGATE_BUTTON )
-            );
+                    new WaitUntilTargetIsReady(DashboardPage.MAIN_NAVIGATE_BUTTON, isCurrentlyEnabled())
+                            .forNoMoreThan(60)
+                            .seconds(),
+                    Click.on(MAIN_NAVIGATE_BUTTON));
+        } catch (NoSuchElementException e) {
+            actor.attemptsTo(Click.on(MAIN_NAVIGATE_BUTTON));
         }
     }
 
     public static MenuBoardAction show() {
-        return instrumented( MenuBoardAction.class );
+        return instrumented(MenuBoardAction.class);
     }
 }
