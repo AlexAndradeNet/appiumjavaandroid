@@ -10,14 +10,17 @@ This project uses the following technologies:
 * Android SDK
 * IntelliJ IDEA
 
+If you need help to install the Android SDK, you can find the instructions at the end of this file.
+
 And it's written with the design pattern Screenplay that helps to maintain the SOLID principles.
 
 This project is based on https://github.com/Jacobvu84/serenity-screenplay-appium/
 
+---
 ## Running the project
 
 1. Change de device name in the file `/src/test/resources/serenity.conf`
-2. Run the emulator: `emulator -avd Pixel_5 -no-boot-anim -noaudio`
+2. Run the emulator: `emulator -avd Pixel_5 -no-boot-anim -no-audio`
 3. Run the Appium server: `appium --allow-insecure --allow-cors --session-override`
 4. Run the tests. See the two next sections for more details.
 
@@ -29,15 +32,16 @@ This project is based on https://github.com/Jacobvu84/serenity-screenplay-appium
 
 ### Running feature from IntelliJ
 
-1. Click on the feature file you want to run
+1. Click on the `feature` file you want to run
 2. In the Run menu Select Run...
 3. In the contextual menu, select the feature, then "Edit..."
-4. You should now see the 'Edit Configuration Settings' window. Set the main class to 'net.serenitybdd.cucumber.cli.Main'
+4. You should now see the 'Edit Configuration Settings' window. Set the main class to `net.serenitybdd.cucumber.cli.Main`
 5. Change the Glue field to the root package of your project (or of your step definitions)
 6. Click Apply
 
 Source: https://johnfergusonsmart.com/running-cucumber-serenity-feature-files-directly-intellij/
 
+---
 ## Reporting
 
 The reports are generated in the `target/site/serenity` folder.
@@ -52,6 +56,7 @@ If you are in Windows, you can run the following command to open the report in y
 start target/site/serenity/index.html
 ```
 
+---
 ## Linting
 
 ### Java
@@ -73,6 +78,7 @@ Run the following command to lint the Gherkin files:
 sh gherkin_check.sh
 ```
 
+---
 ## Troubleshooting
 
 ### Error: Appium cannot locate the device
@@ -86,12 +92,13 @@ The result is similar to this:
 List of devices attached
 emulator-5554	device
 ```
-In this case, the device name is `emulator-5554`. You need to change the device name in the file `/src/resources/serenity.conf`.
+In this case, the device name is `emulator-5554`. You need to change the device name in the file `/src/test/resources/serenity.conf`.
 
 ### GitHub delete the APK file
 
-Github deletes the APK file after 100 days. You can download the APK file from the following link: https://apkfun.com/MetaTrader-5.html
+GitHub deletes the APK file after 100 days. You can download the APK file from the following link: https://apkfun.com/MetaTrader-5.html
 
+---
 ## Installing Android Tools
 
 These instructions are for Mac OS X. If you are using Windows, you can find the instructions here: https://developer.android.com/studio/install
