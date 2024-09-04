@@ -25,7 +25,7 @@ here: https://developer.android.com/studio/install
 ```bash
 brew update
 brew install openjdk@17
-brew cask install android-commandlinetools
+brew install android-commandlinetools --cask
 echo "export ANDROID_SDK_ROOT=/opt/homebrew/share/android-commandlinetools/" >> ~/.zprofile
 source ~/.zprofile
 ```
@@ -57,6 +57,13 @@ Install the webdriver
 ```bash
 appium driver install uiautomator2
 ```
+
+### Install Appium Inspector
+
+Appium Inspector is a GUI application to help us inspect the elements of our app
+retrieving the locators.
+
+https://github.com/appium/appium-inspector/releases
 
 ---
 
