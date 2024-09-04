@@ -22,7 +22,7 @@ ext {
                     simple: "org.slf4j:slf4j-simple:${slf4jVersion}",
             ],
             sonarqube: "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:${sonarScannerVersion}",
-            appium  : "io.appium:java-client:${appiumVersion}",
+            appium   : "io.appium:java-client:${appiumVersion}",
 
             test     : [
                     serenity: [
