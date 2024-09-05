@@ -128,4 +128,5 @@ sh gherkin_check.sh
 ### GitHub delete the APK file
 
 GitHub deletes the APK file after 100 days. You can download the APK file from
-the following link: https://apkfun.com/MetaTrader-5.html
+the following
+link: https://metatrader-5-trading-platform.en.softonic.com/mac/download
