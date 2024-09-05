@@ -2,6 +2,7 @@
 package net.alexandrade.mobile.features.steps;
 
 import static net.alexandrade.mobile.screenplay.ui.HomePage.acceptButton;
+import static net.alexandrade.mobile.screenplay.ui.HomePage.openDemoAccountButton;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
@@ -32,7 +33,7 @@ public class Hooks {
     @Given("Jacob is in the Home Page")
     public void theActorIsInTheHomePage() {
         theActorCalled(jacob).can(BrowseTheWeb.with(hisMobileDevice));
-        theActorInTheSpotlight().attemptsTo(Click.on(acceptButton), Click.on(acceptButton));
+        theActorInTheSpotlight().attemptsTo(Click.on(acceptButton), Click.on(openDemoAccountButton), Click.on(openDemoAccountButton));
     }
 
     @After
