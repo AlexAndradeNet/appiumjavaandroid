@@ -1,121 +1,142 @@
 # Appium + Java + Android - 2023
 
-This project is written with the **Screenplay design pattern** that helps to
-maintain the SOLID principles.
+This project leverages the **Screenplay Design Pattern**, which promotes the
+adherence to SOLID principles for better maintainability and scalability of
+automated test scripts.
 
-You can find a version for iOS (Apple iPhone)
-here: [Appium + Java + iOS - 2023](https://github.com/AlexAndradeNet/appiumjavaios).
+For a similar setup targeting iOS (Apple iPhone), visit the following
+repository: [Appium + Java + iOS - 2023](https://github.com/AlexAndradeNet/appiumjavaios).
 
-This project is based
-on https://github.com/Jacobvu84/serenity-screenplay-appium/
-
----
-
-## 🔧 Tech stack
-
-This project uses the following technologies:
-
-* Java 17
-* Appium 2.x
-* Serenity BDD
-* Cucumber
-* Gradle
-* Android 13
-* Android SDK
-* IntelliJ IDEA
-
-If you need help to install the environment, you can find the instructions in
-this file [INSTALLATION.md](INSTALLATION.md).
+This project is inspired by and based on the work available
+at [Jacobvu84's Serenity Screenplay Appium repository](https://github.com/Jacobvu84/serenity-screenplay-appium/).
 
 ---
 
-## 🚀 Running the project
+## 🔧 Tech Stack
 
-1. Change de device name in the file `/src/test/resources/serenity.conf`
-2. Run the emulator:
+The following technologies are utilized in this project:
 
-```bash
-emulator -avd Pixel_5 -no-boot-anim -no-audio
-```
+- **Java 17**
+- **Appium 2.x**
+- **Serenity BDD**
+- **Cucumber**
+- **Gradle**
+- **Android 13**
+- **Android SDK**
+- **IntelliJ IDEA**
 
-3. Run the Appium server:
+To set up the development environment, refer to the detailed installation guide
+provided in [INSTALLATION.md](docs/INSTALLATION.md).
 
-```bash
-appium --allow-insecure=true --allow-cors --session-override
-```
+---
 
-4. Run the tests. See the two next sections for more details.
+## 👍🏽 Contributing
+
+Thank you for considering contributing to this
+repository! [Here is everything](docs/CONTRIBUTE-java.md)
+you need to know to get started.
+
+---
+
+## 🚀 Running the Project
+
+Follow the steps below to execute the tests:
+
+1. Update the device name in `/src/test/resources/serenity.conf`.
+2. Start the Android emulator with the following command:
+
+   ```bash
+   emulator -avd Pixel_5 -no-boot-anim -no-audio
+   ```
+
+3. Start the Appium server:
+
+   ```bash
+   appium --allow-insecure=true --allow-cors --session-override
+   ```
+
+4. Run the tests. You can choose to run them from the terminal or directly from
+   IntelliJ. Details are provided in the next sections.
 
 ### Running from Gradle / Terminal
 
-1. Open a terminal
-2. Navigate to the project root
-3. Run the following command: `./gradlew clean test aggregate`
+1. Open a terminal.
+2. Navigate to the project's root directory.
+3. Execute the following command:
 
-### Running feature from IntelliJ
+   ```bash
+   ./gradlew clean test aggregate
+   ```
 
-1. Click on the `feature` file you want to run
-2. In the Run menu Select Run...
-3. In the contextual menu, select the feature, then "Edit..."
-4. You should now see the 'Edit Configuration Settings' window. Set the main
-   class to `net.serenitybdd.cucumber.cli.Main`
-5. Change the Glue field to the root package of your project (or of your step
-   definitions)
-6. Click Apply
+### Running a Feature File from IntelliJ
 
-Source: https://johnfergusonsmart.com/running-cucumber-serenity-feature-files-directly-intellij/
+1. Right-click on the `feature` file you want to run.
+2. Go to the **Run** menu and select **Run...**.
+3. From the contextual menu, choose the feature, then select **Edit...**.
+4. In the 'Edit Configuration Settings' window, set the main class to
+   `net.serenitybdd.cucumber.cli.Main`.
+5. Set the Glue field to the root package of your project (or the location of
+   your step definitions).
+6. Click **Apply**.
+
+For additional details,
+visit [John Ferguson Smart's blog post on running Cucumber Serenity feature files in IntelliJ](https://johnfergusonsmart.com/running-cucumber-serenity-feature-files-directly-intellij/).
 
 ---
 
 ## 📊 Reporting
 
-The reports are generated in the `target/site/serenity` folder.
+Test reports are generated in the `target/site/serenity` directory. To view the
+report in your browser:
 
-If you are in Mac, you can run the following command to open the report in your
-browser:
+- **On Mac:**
 
-```bash
-open target/site/serenity/index.html
-```
+  ```bash
+  open target/site/serenity/index.html
+  ```
 
-If you are in Windows, you can run the following command to open the report in
-your browser:
+- **On Windows:**
 
-```powershell
-start target/site/serenity/index.html
-```
+  ```powershell
+  start target/site/serenity/index.html
+  ```
 
 ---
 
-## 💅🏽 Linting / Coding style
+## 💅🏽 Linting / Coding Style
 
-Coding style is very important. It helps to maintain the code clean and easy to
-read.
+Maintaining a consistent coding style is crucial for readability and
+collaboration.
 
-> The ratio of time spent reading versus writing is well over 10 to 1. We are
+> "The ratio of time spent reading versus writing is well over 10 to 1. We are
 > constantly reading old code as part of the effort to write new code. …making
 > it
-> easy to read makes it easier to write.
-
-_Robert C. Martin (a.k.a Uncle Bob)_
+> easy to read makes it easier to write."
+>
+> _Robert C. Martin (a.k.a Uncle Bob)_
 
 ### Java
 
-The Java files are linted using the Google Java Format rules.
-Run the following command to lint the Java files:
+Java files are formatted using the Google Java Format rules. You can check and
+fix the formatting by running:
 
-```bash
-# To check the code
-./gradlew clean build spotlessCheck
-# To fix the code
-./gradlew clean build spotlessApply
-```
+- **To check the code:**
 
-### Linting Gherkin files
+  ```bash
+  ./gradlew clean build spotlessCheck
+  ```
 
-The Gherkin files are linted using the `gherkin-lint` tool. The configuration
-file is located in the `.gherkin-lintrc` file.
-Run the following command to lint the Gherkin files:
+- **To fix the code:**
+
+  ```bash
+  ./gradlew clean build spotlessApply
+  ```
+
+### Linting Gherkin Files
+
+Gherkin files are linted using the `gherkin-lint` tool. The configuration is
+available in `.gherkin-lintrc.json`. Run the following command to lint Gherkin
+files:
 
 ```bash
 sh gherkin_check.sh
@@ -125,8 +146,8 @@ sh gherkin_check.sh
 
 ## 🐞 Troubleshooting
 
-### GitHub delete the APK file
+### GitHub Deleting the APK File
 
-GitHub deletes the APK file after 100 days. You can download the APK file from
-the following
-link: https://metatrader-5-trading-platform.en.softonic.com/mac/download
+GitHub automatically deletes the APK file after 100 days. If you need the APK,
+you can download it from the following
+link: [MetaTrader 5 Trading Platform for Android](https://metatrader-5-trading-platform.en.softonic.com/android).

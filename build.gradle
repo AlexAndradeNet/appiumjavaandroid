@@ -20,6 +20,9 @@ plugins {
     id "org.sonarqube" version "3.3"
 }
 
+// Set the build directory to "target"
+buildDir = file('target')
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
